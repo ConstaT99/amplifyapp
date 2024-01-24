@@ -1,0 +1,14 @@
+{
+  "resourceName": "mynote",
+  "policyUUID": "ec46cad8",
+  "bucketName": "amplifyapp6415c2c3ac274db280c82ca7c2282cb9",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
