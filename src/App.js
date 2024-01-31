@@ -45,14 +45,15 @@ const App = ({ signOut }) => {
             query: createNoteMutation,
             variables: { input: data },
         });
-        fetchNotes();
+        await fetchNotes();
         event.target.reset();
     }
 
-    async function deleteNote({ id ,name }) {
+    async function deleteNote({ id }) {
         const newNotes = notes.filter((note) => note.id !== id);
-        setNotes(newNotes);
-        await remove(name)
+        const currNotes = notes.filter((note) => note.id === id)
+        await remove({key: currNotes[0].name, options: { accessLevel: 'guest'}})
+        setNotes(newNotes)
         await client.graphql({
             query: deleteNoteMutation,
             variables: { input: { id } },
