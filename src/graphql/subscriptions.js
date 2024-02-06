@@ -40,3 +40,36 @@ export const onDeleteNote = /* GraphQL */ `
     }
   }
 `;
+export const onCreateUserInfo = /* GraphQL */ `
+  subscription OnCreateUserInfo($filter: ModelSubscriptionUserInfoFilterInput) {
+    onCreateUserInfo(filter: $filter) {
+      id
+      noteNum
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateUserInfo = /* GraphQL */ `
+  subscription OnUpdateUserInfo($filter: ModelSubscriptionUserInfoFilterInput) {
+    onUpdateUserInfo(filter: $filter) {
+      id
+      noteNum
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteUserInfo = /* GraphQL */ `
+  subscription OnDeleteUserInfo($filter: ModelSubscriptionUserInfoFilterInput) {
+    onDeleteUserInfo(filter: $filter) {
+      id
+      noteNum
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;

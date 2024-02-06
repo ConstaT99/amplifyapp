@@ -5,11 +5,14 @@ import {generateClient} from "aws-amplify/api";
 import {getUrl, remove, uploadData} from "aws-amplify/storage"
 import {Button, Flex, Heading, Image, Text, TextField, View, withAuthenticator,} from "@aws-amplify/ui-react";
 import {listNotes} from "./graphql/queries";
-import {createNote as createNoteMutation, deleteNote as deleteNoteMutation,} from "./graphql/mutations";
+import { deleteNote as deleteNoteMutation,} from "./graphql/mutations";
+const fetch = require('node-fetch');
+const GRAPHQL_API_KEY = process.env.API_AMPLIFYAPP_GRAPHQLAPIKEYOUTPUT;
 
 const client = generateClient();
 const App = ({ signOut }) => {
     const [notes, setNotes] = useState([]);
+    const user = useState(null);
 
     useEffect(() => {
         fetchNotes();
@@ -29,7 +32,6 @@ const App = ({ signOut }) => {
         );
         setNotes(notesFromAPI);
     }
-
     async function createNote(event) {
         event.preventDefault();
         const form = new FormData(event.target);
@@ -39,12 +41,31 @@ const App = ({ signOut }) => {
             description: form.get("description"),
             image : image.name
         };
+
         if(!!data.image) await uploadData({ key : data.name,data : image, options: { accessLevel: 'guest'}});
 
-        await client.graphql({
-            query: createNoteMutation,
-            variables: { input: data },
-        });
+        const url = 'https://ak7rjbi5zxhz6rjicetcskdflm0jptzy.lambda-url.us-east-2.on.aws/';
+
+        await fetch(url, {
+            body: JSON.stringify(data),
+            method: 'POST',
+            headers: {
+                'x-api-key': GRAPHQL_API_KEY,
+                'Content-Type': 'application/json'
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // Handle the response from the Lambda function or API Gateway
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        // await client.graphql({
+        //     query: createNoteMutation,
+        //     variables: { input: data },
+        // });
         await fetchNotes();
         event.target.reset();
     }

@@ -45,6 +45,56 @@
       "service": "Cognito"
     }
   },
+  "function": {
+    "limitNotes": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "amplifyapp"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifyappe752f39b"
+        },
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "mynote"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_limitNotes_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "limitNotes"
+        }
+      ]
+    },
+    "AMPLIFY_function_limitNotes_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "limitNotes"
+        }
+      ]
+    }
+  },
   "storage": {
     "mynote": {
       "dependsOn": [],

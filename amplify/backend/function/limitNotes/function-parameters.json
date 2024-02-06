@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "api": {
+      "amplifyapp": [
+        "Query",
+        "Mutation",
+        "Subscription"
+      ]
+    },
+    "auth": {
+      "amplifyappe752f39b": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "mynote": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "Note:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "UserInfo:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

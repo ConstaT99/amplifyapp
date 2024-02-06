@@ -20,6 +20,12 @@
       },
       "storage": {
         "mynote": {}
+      },
+      "function": {
+        "limitNotes": {
+          "deploymentBucketName": "amplify-amplify07aa521ad1204-staging-11529-deployment",
+          "s3Key": "amplify-builds/limitNotes-67685a58664173777553-build.zip"
+        }
       }
     }
   }
