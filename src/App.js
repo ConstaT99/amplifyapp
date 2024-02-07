@@ -5,8 +5,13 @@ import {generateClient} from "aws-amplify/api";
 import {getUrl, remove, uploadData} from "aws-amplify/storage"
 import {Button, Flex, Heading, Image, Text, TextField, View, withAuthenticator,} from "@aws-amplify/ui-react";
 import {listNotes} from "./graphql/queries";
-import { deleteNote as deleteNoteMutation,} from "./graphql/mutations";
+import {deleteNote as deleteNoteMutation,} from "./graphql/mutations";
+import {fetchAuthSession} from 'aws-amplify/auth'
+import {invoke} from "./myInvoke";
+
 const fetch = require('node-fetch');
+
+
 const GRAPHQL_API_KEY = process.env.API_AMPLIFYAPP_GRAPHQLAPIKEYOUTPUT;
 
 const client = generateClient();
@@ -44,28 +49,36 @@ const App = ({ signOut }) => {
 
         if(!!data.image) await uploadData({ key : data.name,data : image, options: { accessLevel: 'guest'}});
 
-        const url = 'https://ak7rjbi5zxhz6rjicetcskdflm0jptzy.lambda-url.us-east-2.on.aws/';
-
-        await fetch(url, {
-            body: JSON.stringify(data),
-            method: 'POST',
-            headers: {
-                'x-api-key': GRAPHQL_API_KEY,
-                'Content-Type': 'application/json'
-            },
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data); // Handle the response from the Lambda function or API Gateway
+        let temp = await fetchAuthSession()
+            .then(async credentials => {
+                // console.log(credentials)
+                // console.log(await fetchUserAttributes(credentials))
+                return await invoke('limitNotes-staging', JSON.stringify(data), credentials);
             })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        // console.log(temp)
+        // const url = 'https://ak7rjbi5zxhz6rjicetcskdflm0jptzy.lambda-url.us-east-2.on.aws/';
+        // url = url + "?name="
+        // await fetch(url, {
+        //     body: JSON.stringify(data),
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        // })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data); // Handle the response from the Lambda function or API Gateway
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
 
         // await client.graphql({
         //     query: createNoteMutation,
         //     variables: { input: data },
         // });
+        // eslint-disable-next-line no-restricted-globals
+        location.replace(location)
         await fetchNotes();
         event.target.reset();
     }
@@ -73,7 +86,9 @@ const App = ({ signOut }) => {
     async function deleteNote({ id }) {
         const newNotes = notes.filter((note) => note.id !== id);
         const currNotes = notes.filter((note) => note.id === id)
-        await remove({key: currNotes[0].name, options: { accessLevel: 'guest'}})
+        if(!(currNotes[0].image === null || currNotes[0].image === "")){
+            await remove({key: currNotes[0].name, options: { accessLevel: 'guest'}})
+        }
         setNotes(newNotes)
         await client.graphql({
             query: deleteNoteMutation,

@@ -42,14 +42,16 @@ exports.handler = async (event) => {
     let res = await LimitNotes.limitNote();
     statusCode = res.statusCode;
     body = res.body;
+    console.log(JSON.stringify(event))
+    var event_dict = JSON.parse(event);
 
     const limit = 3;
     const totalNotes = body.data.listNotes.items;
     let variables = {
         input: {
-            name: event.name,
-            description: event.description,
-            image : event.image
+            name: event_dict.name,
+            description: event_dict.description,
+            image : event_dict.image
         }
     };
     console.log(variables.input.name)
@@ -58,7 +60,7 @@ exports.handler = async (event) => {
             input: {
                 name : "please add credits",
                 description : "please add credits",
-                image: null
+                image: ""
             }
         }
     }
