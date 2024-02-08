@@ -59,7 +59,7 @@ const App = ({ signOut }) => {
         // console.log(temp)
 
         // eslint-disable-next-line no-restricted-globals
-        // location.replace(location)
+        location.replace(location)
         await fetchNotes();
         event.target.reset();
     }

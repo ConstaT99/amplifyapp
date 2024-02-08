@@ -4,39 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88fff621-df3d-4c5b-87d4-3f2122ba257f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/amplifyapp/cli-inputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../api/amplifyapp/cli-inputs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/amplifyapp/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/../api/amplifyapp/parameters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/amplifyapp/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/../api/amplifyapp/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/amplifyapp/transform.conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/../api/amplifyapp/transform.conf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend-config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/limitNotes/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/limitNotes/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/NoteCreateForm.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/NoteCreateForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/NoteUpdateForm.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/NoteUpdateForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/UserInfoCreateForm.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/UserInfoCreateForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/UserInfoUpdateForm.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/UserInfoUpdateForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/studioTheme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/studioTheme.js.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui-components/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../types/amplify-dependent-resources-ref.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../types/amplify-dependent-resources-ref.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../team-provider-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../team-provider-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/graphql/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/graphql/queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/ui-components/NoteCreateForm.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/ui-components/NoteCreateForm.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/ui-components/NoteCreateForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/ui-components/NoteCreateForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/ui-components/NoteUpdateForm.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/ui-components/NoteUpdateForm.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/ui-components/NoteUpdateForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/ui-components/NoteUpdateForm.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="88fff621-df3d-4c5b-87d4-3f2122ba257f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707356423691</updated>
-      <workItem from="1707356424741" duration="3485000" />
+      <workItem from="1707356424741" duration="3585000" />
     </task>
     <servers />
   </component>
