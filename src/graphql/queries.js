@@ -26,6 +26,7 @@ export const listNotes = /* GraphQL */ `
         name
         description
         image
+        owner
         createdAt
         updatedAt
         __typename

@@ -1,15 +1,33 @@
 {
   "api": {
     "amplifyapp": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifyappe752f39b"
+        }
+      ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authamplifyappe752f39b"
+              }
+            },
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDate": "2025-01-30T07:54:28.286Z",
+              "apiKeyExpirationDate": "2025-02-07T00:06:38.160Z",
               "apiKeyExpirationDays": 365,
-              "description": "learn"
+              "description": "learn2"
             },
             "authenticationType": "API_KEY"
           }

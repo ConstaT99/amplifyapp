@@ -4,11 +4,14 @@ input AMPLIFY {
   globalAuthRule: AuthRule = { allow: public }
 }
 
-type Note @model @auth(rules: [{ allow: public }]) {
+type Note @model @auth(rules: [
+  { allow: public}
+]) {
   id: ID!
   name: String!
   description: String
   image: String
+  owner: String
 }
 
 type UserInfo @model @auth(rules: [{ allow: public }]) {

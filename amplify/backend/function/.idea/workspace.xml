@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88fff621-df3d-4c5b-87d4-3f2122ba257f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/amplifyapp/cli-inputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../api/amplifyapp/cli-inputs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/amplifyapp/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/../api/amplifyapp/parameters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/amplifyapp/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/../api/amplifyapp/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/amplifyapp/transform.conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/../api/amplifyapp/transform.conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend-config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/limitNotes/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/limitNotes/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/NoteCreateForm.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/NoteCreateForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/NoteUpdateForm.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/NoteUpdateForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/UserInfoCreateForm.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/UserInfoCreateForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/UserInfoUpdateForm.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/UserInfoUpdateForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/studioTheme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/studioTheme.js.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui-components/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../types/amplify-dependent-resources-ref.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../types/amplify-dependent-resources-ref.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../team-provider-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../team-provider-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/graphql/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/graphql/queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/ui-components/NoteCreateForm.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/ui-components/NoteCreateForm.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/ui-components/NoteCreateForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/ui-components/NoteCreateForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/ui-components/NoteUpdateForm.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/ui-components/NoteUpdateForm.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/ui-components/NoteUpdateForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/ui-components/NoteUpdateForm.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2c42FAuh9Nmr51kFvP5rhkyZVIM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "javascript.nodejs.core.library.configured.version": "20.11.0",
+    "javascript.nodejs.core.library.typings.version": "20.11.16",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.22-corretto-11.0.22-f644763e9732-4a89cc43" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88fff621-df3d-4c5b-87d4-3f2122ba257f" name="Changes" comment="" />
+      <created>1707356423691</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707356423691</updated>
+      <workItem from="1707356424741" duration="3485000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

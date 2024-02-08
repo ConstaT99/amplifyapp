@@ -6,26 +6,25 @@ import {getUrl, remove, uploadData} from "aws-amplify/storage"
 import {Button, Flex, Heading, Image, Text, TextField, View, withAuthenticator,} from "@aws-amplify/ui-react";
 import {listNotes} from "./graphql/queries";
 import {deleteNote as deleteNoteMutation,} from "./graphql/mutations";
-import {fetchAuthSession} from 'aws-amplify/auth'
+import {fetchAuthSession, getCurrentUser} from 'aws-amplify/auth'
 import {invoke} from "./myInvoke";
 
-const fetch = require('node-fetch');
-
-
-const GRAPHQL_API_KEY = process.env.API_AMPLIFYAPP_GRAPHQLAPIKEYOUTPUT;
-
 const client = generateClient();
+
 const App = ({ signOut }) => {
     const [notes, setNotes] = useState([]);
-    const user = useState(null);
-
+    useState(null);
     useEffect(() => {
         fetchNotes();
     }, []);
 
     async function fetchNotes() {
         const apiData = await client.graphql({ query: listNotes });
-        const notesFromAPI = apiData.data.listNotes.items;
+        let notesFromAPI = apiData.data.listNotes.items;
+        let credentials = await fetchAuthSession();
+        let currentUser = await getCurrentUser(credentials)
+        console.log(notesFromAPI)
+        notesFromAPI = notesFromAPI.filter((notesFromAPI) => notesFromAPI.owner === currentUser.username)
         await Promise.all(
             notesFromAPI.map(async (note) =>{
                 if( note.image){
@@ -41,44 +40,26 @@ const App = ({ signOut }) => {
         event.preventDefault();
         const form = new FormData(event.target);
         const image = form.get("image");
+        let credentials = await fetchAuthSession();
+        let currentUser = await getCurrentUser(credentials)
+        console.log(currentUser)
         const data = {
             name: form.get("name"),
             description: form.get("description"),
-            image : image.name
+            image : image.name,
+            owner: currentUser.username,
         };
 
         if(!!data.image) await uploadData({ key : data.name,data : image, options: { accessLevel: 'guest'}});
 
-        let temp = await fetchAuthSession()
+        await fetchAuthSession()
             .then(async credentials => {
-                // console.log(credentials)
-                // console.log(await fetchUserAttributes(credentials))
                 return await invoke('limitNotes-staging', JSON.stringify(data), credentials);
             })
         // console.log(temp)
-        // const url = 'https://ak7rjbi5zxhz6rjicetcskdflm0jptzy.lambda-url.us-east-2.on.aws/';
-        // url = url + "?name="
-        // await fetch(url, {
-        //     body: JSON.stringify(data),
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log(data); // Handle the response from the Lambda function or API Gateway
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //     });
 
-        // await client.graphql({
-        //     query: createNoteMutation,
-        //     variables: { input: data },
-        // });
         // eslint-disable-next-line no-restricted-globals
-        location.replace(location)
+        // location.replace(location)
         await fetchNotes();
         event.target.reset();
     }
