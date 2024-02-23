@@ -24,7 +24,7 @@
       "function": {
         "limitNotes": {
           "deploymentBucketName": "amplify-amplify07aa521ad1204-staging-11529-deployment",
-          "s3Key": "amplify-builds/limitNotes-7049515669394f4c3532-build.zip"
+          "s3Key": "amplify-builds/limitNotes-594372655553324d5337-build.zip"
         }
       }
     }

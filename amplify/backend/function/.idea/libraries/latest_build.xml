@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="latest-build">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/limitNotes/dist/latest-build.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

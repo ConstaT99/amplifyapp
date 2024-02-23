@@ -1,6 +1,5 @@
 const fetch = require('node-fetch');
 const GRAPHQL_ENDPOINT = process.env.API_AMPLIFYAPP_GRAPHQLAPIENDPOINTOUTPUT;
-const GRAPHQL_API_KEY = process.env.API_AMPLIFYAPP_GRAPHQLAPIKEYOUTPUT;
 const query = /* GraphQL */ `
     query LIST_NOTES {
         listNotes {
@@ -12,12 +11,12 @@ const query = /* GraphQL */ `
         }
     }
 `;
-const limitNote = async () => {
+const limitNote = async (token) => {
     const fetch = require("node-fetch");
     const options = {
         method: 'POST',
         headers: {
-            'x-api-key': GRAPHQL_API_KEY,
+            'authorization': token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ query })

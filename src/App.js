@@ -13,29 +13,27 @@ const client = generateClient();
 
 const App = ({ signOut }) => {
     const [notes, setNotes] = useState([]);
-    useState(null);
+    // useState(null);
     useEffect(() => {
-        fetchNotes();
+        fetchNotes()
     }, []);
 
     async function fetchNotes() {
-        const apiData = await client.graphql({ query: listNotes });
+        const apiData = await client.graphql({ query: listNotes, authMode : "userPool" });
         let notesFromAPI = apiData.data.listNotes.items;
         let credentials = await fetchAuthSession();
-        let currentUser = await getCurrentUser(credentials)
-        console.log(notesFromAPI)
-        notesFromAPI = notesFromAPI.filter((notesFromAPI) => notesFromAPI.owner === currentUser.username)
+
         await Promise.all(
             notesFromAPI.map(async (note) =>{
                 if( note.image){
                     note.image = (await getUrl({key: note.name, options: {accessLevel: 'guest'}})).url;
                 }
-
                 return note;
             })
         );
         setNotes(notesFromAPI);
     }
+
     async function createNote(event) {
         event.preventDefault();
         const form = new FormData(event.target);
@@ -47,7 +45,8 @@ const App = ({ signOut }) => {
             name: form.get("name"),
             description: form.get("description"),
             image : image.name,
-            owner: currentUser.username,
+            owner: currentUser.userId,
+            token: credentials.tokens.idToken.toString()
         };
 
         if(!!data.image) await uploadData({ key : data.name,data : image, options: { accessLevel: 'guest'}});
@@ -57,9 +56,6 @@ const App = ({ signOut }) => {
                 return await invoke('limitNotes-staging', JSON.stringify(data), credentials);
             })
         // console.log(temp)
-
-        // eslint-disable-next-line no-restricted-globals
-        location.replace(location)
         await fetchNotes();
         event.target.reset();
     }

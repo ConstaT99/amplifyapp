@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "aws-amplify": "^6.0.13",
+    "aws-sdk": "^2.1565.0",
     "node-fetch": "2"
   },
   "devDependencies": {

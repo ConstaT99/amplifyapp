@@ -11,6 +11,7 @@ export const createNote = /* GraphQL */ `
       name
       description
       image
+      owner
       createdAt
       updatedAt
       __typename
@@ -27,6 +28,7 @@ export const updateNote = /* GraphQL */ `
       name
       description
       image
+      owner
       createdAt
       updatedAt
       __typename
@@ -43,6 +45,7 @@ export const deleteNote = /* GraphQL */ `
       name
       description
       image
+      owner
       createdAt
       updatedAt
       __typename
@@ -59,6 +62,7 @@ export const createUserInfo = /* GraphQL */ `
       noteNum
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -73,6 +77,7 @@ export const updateUserInfo = /* GraphQL */ `
       noteNum
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -87,6 +92,7 @@ export const deleteUserInfo = /* GraphQL */ `
       noteNum
       createdAt
       updatedAt
+      owner
       __typename
     }
   }

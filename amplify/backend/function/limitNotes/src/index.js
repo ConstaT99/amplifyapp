@@ -1,4 +1,16 @@
-// /* Amplify Params - DO NOT EDIT
+/* Amplify Params - DO NOT EDIT
+	API_AMPLIFYAPP_GRAPHQLAPIENDPOINTOUTPUT
+	API_AMPLIFYAPP_GRAPHQLAPIIDOUTPUT
+	API_AMPLIFYAPP_GRAPHQLAPIKEYOUTPUT
+	API_AMPLIFYAPP_NOTETABLE_ARN
+	API_AMPLIFYAPP_NOTETABLE_NAME
+	API_AMPLIFYAPP_USERINFOTABLE_ARN
+	API_AMPLIFYAPP_USERINFOTABLE_NAME
+	AUTH_AMPLIFYAPPE752F39B_USERPOOLID
+	ENV
+	REGION
+	STORAGE_MYNOTE_BUCKETNAME
+Amplify Params - DO NOT EDIT */// /* Amplify Params - DO NOT EDIT
 // 	API_AMPLIFYAPP_GRAPHQLAPIENDPOINTOUTPUT
 // 	API_AMPLIFYAPP_GRAPHQLAPIIDOUTPUT
 // 	API_AMPLIFYAPP_GRAPHQLAPIKEYOUTPUT
@@ -11,7 +23,7 @@
 // 	REGION
 // 	STORAGE_MYNOTE_BUCKETNAME
 // Amplify Params - DO NOT EDIT */
-
+const graphqlfetch = require( "./func/graphqlfetch");
 const fetch = require('node-fetch');
 const LimitNotes = require("./func/LimitNotes");
 const GRAPHQL_ENDPOINT = process.env.API_AMPLIFYAPP_GRAPHQLAPIENDPOINTOUTPUT;
@@ -25,6 +37,7 @@ const query = /* GraphQL */ `
             name
             description
             image
+            owner
             createdAt
             updatedAt
             __typename
@@ -39,13 +52,16 @@ exports.handler = async (event) => {
     console.log(`EVENT: ${JSON.stringify(event)}`);
     let statusCode = 200;
     let body = null;
-    let res = await LimitNotes.limitNote();
+    let event_dict = JSON.parse(event);
+    console.log(event_dict.token)
+    let res = await LimitNotes.limitNote(event_dict.token);
     statusCode = res.statusCode;
     body = res.body;
     console.log(JSON.stringify(event));
-    var event_dict = JSON.parse(event);
+
 
     const limit = 3;
+    console.log(JSON.stringify(body));
     const totalNotes = body.data.listNotes.items;
     let variables = {
         input: {
@@ -70,7 +86,7 @@ exports.handler = async (event) => {
     const options = {
         method: 'POST',
         headers: {
-            'x-api-key': GRAPHQL_API_KEY,
+            'authorization': event_dict.token,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ query, variables })

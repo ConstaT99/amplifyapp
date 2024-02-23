@@ -8,6 +8,7 @@ export const getNote = /* GraphQL */ `
       name
       description
       image
+      owner
       createdAt
       updatedAt
       __typename
@@ -43,6 +44,7 @@ export const getUserInfo = /* GraphQL */ `
       noteNum
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -59,6 +61,7 @@ export const listUserInfos = /* GraphQL */ `
         noteNum
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
